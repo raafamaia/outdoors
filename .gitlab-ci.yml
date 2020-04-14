@@ -15,12 +15,12 @@ deploy:develop: &deploy
   only:
     - develop
 
-deploy: production:
+deploy:production:
   <<: *deploy
   variables:
     CNAME: natours.surge.sh
     GIT_STRATEGY: none
   environment:
     name: production
-  only: 
+  only:
     - master
