@@ -1,0 +1,173 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/* CSS Resetting Margin and Padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+
+  padding: 30px;
+}
+
+.header {
+  height: 95vh;
+  /* You can apply a background image with a linear gradient, just put what you want to have on the top first, 
+  and then what you want to have in the back. */
+  background-image: linear-gradient(to right bottom, #7ed56fc7, #28b485c7),
+    url(../img/hero.jpg);
+
+  /* It says that you want the image to cover all the space */
+  background-size: cover;
+
+  /* The top of the image always appears */
+  background-position: top;
+  position: relative;
+
+  /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
+  where we can set the four points where the container should exists, and everything out will be cliped. 
+  The four points rotate clockwise, the first being the top left corner.*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+/* This is how we center elements.
+First apply a position absolute with 50% 50% on top and left
+You'll see that the element is not centralized, but the X 0 and Y 0 of the element is.
+Then we'll transform that element, shifting the X 0 and Y 0 to the center with translate(-50%, -50%) */
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden;
+
+  margin-bottom: 60px;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+
+  /* Applying animation */
+  animation: moveInLeft 1s ease-out; /* ease-out: start faster, end slower */
+  /* animation-name: moveInLeft; */
+  /* animation-duration: 1s; */
+  /* animation-timing-function: ease-out; */
+
+  /* Wait for tha animation to start */
+  /* animation-delay: 3s; */
+
+  /* How many times the animatio will play */
+  /* animation-iteration-count: 3; */
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+
+  animation: moveInRight 1s ease-out; /* ease-out: start faster, end slower */
+  /* animation-name: moveInRight; */
+  /* animation-duration: 1s; */
+  /* animation-timing-function: ease-out;*/
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  /* Bounce effect, putting X 10px further */
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  /* Bounce effect, putting X 10px further */
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* When select a link, use pseudo element :link
+We also want to style the visited state, to be the same */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+
+  /* When not sure of the transition state, use all */
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  /* Y going up is negative value */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
