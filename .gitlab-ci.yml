@@ -10,7 +10,7 @@ deploy:develop: &deploy
     GIT_STRATEGY: none
   before_script:
     - npm install -g surge
-  script: surge --domain ${CNAME}
+  script: surge --project . --domain ${CNAME}
   environment:
     name: develop
     url: https://${CNAME}
