@@ -1,0 +1,26 @@
+image: node
+
+stages:
+  - deploy
+
+deploy:develop: &deploy
+  stage: deploy
+  variables:
+    CNAME: natours-develop.surge.sh
+    GIT_STRATEGY: none
+  script: surge --project ./ --domain ${CNAME}
+  environment:
+    name: develop
+    url: https://${CNAME}
+  only:
+    - develop
+
+deploy: production:
+  <<: *deploy
+  variables:
+    CNAME: natours.surge.sh
+    GIT_STRATEGY: none
+  environment:
+    name: production
+  only: 
+    - master
