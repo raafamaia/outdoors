@@ -8,7 +8,9 @@ deploy:develop: &deploy
   variables:
     CNAME: natours-develop.surge.sh
     GIT_STRATEGY: none
-  script: surge --project ./ --domain ${CNAME}
+  before_script:
+    - npm install -g surge
+  script: surge --domain ${CNAME}
   environment:
     name: develop
     url: https://${CNAME}
