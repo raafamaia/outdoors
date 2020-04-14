@@ -6,7 +6,7 @@ stages:
 deploy:develop: &deploy
   stage: deploy
   variables:
-    CNAME: outdoors-develop.surge.sh
+    CNAME: outdoors-project-develop.surge.sh
   before_script:
     - npm install -g surge
   script: surge --project . --domain ${CNAME}
@@ -19,7 +19,7 @@ deploy:develop: &deploy
 deploy:production:
   <<: *deploy
   variables:
-    CNAME: outdoors.surge.sh
+    CNAME: outdoors-project.surge.sh
   environment:
     name: production
   only:
