@@ -151,6 +151,18 @@ Then we'll transform that element, shifting the X 0 and Y 0 to the center with t
   }
 }
 
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 /* When select a link, use pseudo element :link
 We also want to style the visited state, to be the same */
 .btn:link,
@@ -164,6 +176,8 @@ We also want to style the visited state, to be the same */
 
   /* When not sure of the transition state, use all */
   transition: all 0.2s;
+
+  position: relative;
 }
 
 .btn:hover {
@@ -180,4 +194,32 @@ We also want to style the visited state, to be the same */
 .btn-white {
   background-color: #fff;
   color: #777;
+}
+
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
 }
