@@ -5,6 +5,11 @@ Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485
 
+Dark: #0C1631
+Orange: #ED623B
+Light: #F1E5C2
+Yellow: #DCAA2D
+
 */
 
 /* CSS Resetting Margin and Padding */
@@ -28,14 +33,19 @@ body {
   height: 95vh;
   /* You can apply a background image with a linear gradient, just put what you want to have on the top first, 
   and then what you want to have in the back. */
-  background-image: linear-gradient(to right bottom, #7ed56fc7, #28b485c7),
-    url(../img/hero.jpg);
+  /* background-image: linear-gradient(to right bottom, #7ed56fc7, #28b485c7), */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(241, 229, 194, 0.8),
+      rgba(237, 98, 59, 0.8)
+    ),
+    url(../img/outdoors/bg-1.png);
 
   /* It says that you want the image to cover all the space */
   background-size: cover;
 
   /* The top of the image always appears */
-  background-position: top;
+  background-position: center;
   position: relative;
 
   /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
