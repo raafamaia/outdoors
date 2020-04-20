@@ -65,7 +65,7 @@ body {
 First apply a position absolute with 50% 50% on top and left
 You'll see that the element is not centralized, but the X 0 and Y 0 of the element is.
 Then we'll transform that element, shifting the X 0 and Y 0 to the center with translate(-50%, -50%) */
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -74,13 +74,13 @@ Then we'll transform that element, shifting the X 0 and Y 0 to the center with t
   text-align: center;
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3.5rem;
 }
 
@@ -93,7 +93,7 @@ Then we'll transform that element, shifting the X 0 and Y 0 to the center with t
   margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -112,7 +112,7 @@ Then we'll transform that element, shifting the X 0 and Y 0 to the center with t
   /* animation-iteration-count: 3; */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -199,7 +199,7 @@ We also want to style the visited state, to be the same */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -218,7 +218,7 @@ We also want to style the visited state, to be the same */
   transition: all 0.4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -227,7 +227,7 @@ We also want to style the visited state, to be the same */
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
