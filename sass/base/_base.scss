@@ -1,0 +1,18 @@
+/* CSS Resetting Margin and Padding */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // Default font-size of browsers is 16px;
+  // Here we are  setting the font-size to 10px (62.5% of 16px), which will help us using 'rem'.
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}

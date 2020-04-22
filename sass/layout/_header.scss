@@ -1,0 +1,48 @@
+.header {
+  height: 95vh;
+  /* You can apply a background image with a linear gradient, just put what you want to have on the top first, 
+  and then what you want to have in the back. */
+  /* background-image: linear-gradient(to right bottom, #7ed56fc7, #28b485c7), */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/outdoors/bg-1.png);
+
+  /* It says that you want the image to cover all the space */
+  background-size: cover;
+
+  /* The top of the image always appears */
+  background-position: center;
+  position: relative;
+
+  /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
+  where we can set the four points where the container should exists, and everything out will be cliped. 
+  The four points rotate clockwise, the first being the top left corner.*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  /* This is how we center elements.
+    First apply a position absolute with 50% 50% on top and left
+    You'll see that the element is not centralized, but the X 0 and Y 0 of the element is.
+    Then we'll transform that element, shifting the X 0 and Y 0 to the center with translate(-50%, -50%) */
+  &__text-box {
+    position: absolute;
+
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+}
