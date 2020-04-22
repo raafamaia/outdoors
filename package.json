@@ -1,0 +1,22 @@
+{
+  "name": "outdoors",
+  "version": "1.0.0",
+  "description": "Landing page for outdoors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/advanced-styling/outdoors.git"
+  },
+  "author": "Rafael Maia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/advanced-styling/outdoors/issues"
+  },
+  "homepage": "https://gitlab.com/advanced-styling/outdoors#readme",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
