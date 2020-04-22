@@ -11,41 +11,62 @@ Light: #F1E5C2
 Yellow: #DCAA2D
 
 */
+
+$color-primary: #dcaa2d;
+$color-primary-light: #f1e5c2;
+$color-primary-dark: #ed623b;
+
+$color-gray-dark: #777;
+$color-white: #fff;
+
 /* CSS Resetting Margin and Padding */
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   /* font-size: 16rem; */
   line-height: 1.7;
-  color: #777;
+  color: $color-gray-dark;
+
   padding: 3rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .header {
   height: 95vh;
   /* You can apply a background image with a linear gradient, just put what you want to have on the top first, 
   and then what you want to have in the back. */
   /* background-image: linear-gradient(to right bottom, #7ed56fc7, #28b485c7), */
-  background-image: linear-gradient(to right bottom, rgba(241, 229, 194, 0.8), rgba(237, 98, 59, 0.8)), url(../img/outdoors/bg-1.png);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/outdoors/bg-1.png);
+
   /* It says that you want the image to cover all the space */
   background-size: cover;
+
   /* The top of the image always appears */
   background-position: center;
   position: relative;
+
   /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
   where we can set the four points where the container should exists, and everything out will be cliped. 
   The four points rotate clockwise, the first being the top left corner.*/
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
 
 /* This is how we center elements.
 First apply a position absolute with 50% 50% on top and left
@@ -56,78 +77,105 @@ Then we'll transform that element, shifting the X 0 and Y 0 to the center with t
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center; }
+
+  text-align: center;
+}
 
 .header__logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem; }
+  left: 4rem;
+}
 
 .header__logo {
-  height: 3.5rem; }
+  height: 3.5rem;
+}
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
+
   backface-visibility: hidden;
-  margin-bottom: 6rem; }
+
+  margin-bottom: 6rem;
+}
 
 .heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
+
   /* Applying animation */
-  animation: moveInLeft 1s ease-out;
-  /* ease-out: start faster, end slower */
+  animation: moveInLeft 1s ease-out; /* ease-out: start faster, end slower */
   /* animation-name: moveInLeft; */
   /* animation-duration: 1s; */
   /* animation-timing-function: ease-out; */
+
   /* Wait for tha animation to start */
   /* animation-delay: 3s; */
+
   /* How many times the animatio will play */
-  /* animation-iteration-count: 3; */ }
+  /* animation-iteration-count: 3; */
+}
 
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-out;
-  /* ease-out: start faster, end slower */
+
+  animation: moveInRight 1s ease-out; /* ease-out: start faster, end slower */
   /* animation-name: moveInRight; */
   /* animation-duration: 1s; */
-  /* animation-timing-function: ease-out;*/ }
+  /* animation-timing-function: ease-out;*/
+}
 
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10rem); }
+    transform: translateX(-10rem);
+  }
+
   /* Bounce effect, putting X 10px further */
   80% {
-    transform: translateX(1rem); }
+    transform: translateX(1rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem); }
+    transform: translateX(10rem);
+  }
+
   /* Bounce effect, putting X 10px further */
   80% {
-    transform: translateX(-1rem); }
+    transform: translateX(-1rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem); }
+    transform: translateY(3rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 /* When select a link, use pseudo element :link
 We also want to style the visited state, to be the same */
@@ -135,26 +183,33 @@ We also want to style the visited state, to be the same */
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
+
   font-size: 1.6rem;
   padding: 1.5rem 4rem;
   display: inline-block;
   border-radius: 10rem;
+
   /* When not sure of the transition state, use all */
   transition: all 0.2s;
-  position: relative; }
+
+  position: relative;
+}
 
 .btn:hover {
   /* Y going up is negative value */
   transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
 
 .btn:active {
   transform: translateY(-1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
 
 .btn--white {
-  background-color: #fff;
-  color: #777; }
+  background-color: $color-white;
+  color: $color-gray-dark;
+}
 
 .btn::after {
   content: '';
@@ -166,15 +221,20 @@ We also want to style the visited state, to be the same */
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.4s; }
+
+  transition: all 0.4s;
+}
 
 .btn--white::after {
-  background-color: #fff; }
+  background-color: $color-white;
+}
 
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
+  opacity: 0;
+}
 
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+}
