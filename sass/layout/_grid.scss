@@ -1,6 +1,5 @@
 .row {
   max-width: $grid-width;
-  background-color: #eee;
   margin: 0 auto;
 
   &:not(:last-child) {
@@ -13,8 +12,6 @@
   // Another option is *= which means contain 'col-'
   // Another option is $= which means ends with 'col-'
   [class^='col-'] {
-    background-color: orangered;
-
     float: left;
 
     &:not(:last-child) {
