@@ -190,7 +190,10 @@ We also want to style the visited state, to be the same */
     width: 55%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
     border-radius: 0.2rem;
-    position: absolute; }
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 1rem; }
     .composition__photo--p1 {
       left: 0;
       top: -2rem; }
@@ -200,6 +203,13 @@ We also want to style the visited state, to be the same */
     .composition__photo--p3 {
       left: 20%;
       top: 10rem; }
+    .composition__photo:hover {
+      outline: 1.2rem solid #ed623b;
+      transform: scale(1.25) translateY(0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.6);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.8); }
 
 .header {
   height: 95vh;
