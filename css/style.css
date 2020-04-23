@@ -211,6 +211,24 @@ We also want to style the visited state, to be the same */
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.8); }
 
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 0.3rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(to right, #dcaa2d, #ed623b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
 .header {
   height: 95vh;
   /* You can apply a background image with a linear gradient, just put what you want to have on the top first, 
@@ -273,3 +291,14 @@ We also want to style the visited state, to be the same */
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
+
+.section-features {
+  margin-top: -20rem;
+  padding: 30rem 0;
+  background-image: linear-gradient(to right bottom, rgba(241, 229, 194, 0.8), rgba(237, 98, 59, 0.8)), url(../img/outdoors/ship-yard.png);
+  background-size: cover;
+  background-position: center;
+  /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
+  where we can set the four points where the container should exists, and everything out will be cliped. 
+  The four points rotate clockwise, the first being the top left corner.*/
+  clip-path: polygon(0 18vh, 100% 0, 100% 63vh, 0 100%); }
