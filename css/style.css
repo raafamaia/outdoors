@@ -294,11 +294,13 @@ We also want to style the visited state, to be the same */
 
 .section-features {
   margin-top: -20rem;
-  padding: 30rem 0;
+  padding: 20rem 0;
   background-image: linear-gradient(to right bottom, rgba(241, 229, 194, 0.8), rgba(237, 98, 59, 0.8)), url(../img/outdoors/ship-yard.png);
   background-size: cover;
   background-position: center;
+  transform: skewY(-7deg);
   /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
   where we can set the four points where the container should exists, and everything out will be cliped. 
-  The four points rotate clockwise, the first being the top left corner.*/
-  clip-path: polygon(0 18vh, 100% 0, 100% 63vh, 0 100%); }
+  The four points rotate clockwise, the first being the top left corner.*/ }
+  .section-features > * {
+    transform: skewY(7deg); }
