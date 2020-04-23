@@ -20,6 +20,7 @@
   /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
   where we can set the four points where the container should exists, and everything out will be cliped. 
   The four points rotate clockwise, the first being the top left corner.*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   &__logo-box {

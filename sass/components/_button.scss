@@ -42,6 +42,15 @@ We also want to style the visited state, to be the same */
     }
   }
 
+  &--orange {
+    background-color: $color-primary-dark;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary-dark;
+    }
+  }
+
   &::after {
     content: '';
     display: inline-block;

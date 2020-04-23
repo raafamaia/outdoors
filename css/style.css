@@ -118,6 +118,12 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
 
+.u-margin-top-big {
+  margin-bottom: 8rem; }
+
+.u-margin-top-huge {
+  margin-bottom: 10rem; }
+
 /* When select a link, use pseudo element :link
 We also want to style the visited state, to be the same */
 .btn:link, .btn:visited {
@@ -148,6 +154,12 @@ We also want to style the visited state, to be the same */
   color: #777; }
   .btn--white::after {
     background-color: #fff; }
+
+.btn--orange {
+  background-color: #ed623b;
+  color: #fff; }
+  .btn--orange::after {
+    background-color: #ed623b; }
 
 .btn::after {
   content: '';
@@ -233,11 +245,9 @@ We also want to style the visited state, to be the same */
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem; }
+  height: 52rem; }
   .card__side {
-    color: #fff;
-    font-size: 2rem;
-    height: 50rem;
+    height: 52rem;
     transition: all 0.8s ease;
     position: absolute;
     top: 0;
@@ -245,6 +255,7 @@ We also want to style the visited state, to be the same */
     width: 100%;
     backface-visibility: hidden;
     border-radius: 0.3rem;
+    overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
     .card__side--front {
       background-color: #fff; }
@@ -252,10 +263,79 @@ We also want to style the visited state, to be the same */
       transform: rotateY(180deg); }
       .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #f1e5c2, #ed623b); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #5643fa, #2998ff); }
   .card:hover .card__side--front {
-    transform: rotateY(180deg); }
+    transform: rotateY(-180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0deg); }
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 3px; }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/outdoors/card-cover-1.png); }
+    .card__picture--2 {
+      background-image: linear-gradient(to right bottom, #f1e5c2, #ed623b), url(../img/outdoors/card-cover-2.png); }
+    .card__picture--3 {
+      background-image: linear-gradient(to right bottom, #5643fa, #2998ff), url(../img/outdoors/card-cover-3.png); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+  .card__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(241, 229, 194, 0.85), rgba(237, 98, 59, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.85), rgba(41, 152, 255, 0.85)); }
+  .card__details {
+    padding: 3rem; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__price-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    color: #fff; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
 
 .header {
   height: 95vh;
@@ -271,6 +351,7 @@ We also want to style the visited state, to be the same */
   /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
   where we can set the four points where the container should exists, and everything out will be cliped. 
   The four points rotate clockwise, the first being the top left corner.*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* This is how we center elements.
     First apply a position absolute with 50% 50% on top and left
@@ -321,19 +402,18 @@ We also want to style the visited state, to be the same */
   margin-top: -20vh; }
 
 .section-features {
-  margin-top: -10rem;
-  padding: 20rem 0;
+  margin-top: -20rem;
+  padding: 25rem 0;
   background-image: linear-gradient(to right bottom, rgba(241, 229, 194, 0.8), rgba(237, 98, 59, 0.8)), url(../img/outdoors/ship-yard.png);
   background-size: cover;
   background-position: center;
-  transform: skewY(-7deg);
   /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
   where we can set the four points where the container should exists, and everything out will be cliped. 
-  The four points rotate clockwise, the first being the top left corner.*/ }
-  .section-features > * {
-    transform: skewY(7deg); }
+  The four points rotate clockwise, the first being the top left corner.*/
+  -webkit-clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%); }
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0;
-  margin-top: -10rem; }
+  padding: 25rem 0 10rem 0;
+  margin-top: -20rem; }

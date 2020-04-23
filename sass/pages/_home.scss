@@ -5,8 +5,8 @@
 }
 
 .section-features {
-  margin-top: -10rem;
-  padding: 20rem 0;
+  margin-top: -20rem;
+  padding: 25rem 0;
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.8),
@@ -19,23 +19,24 @@
 
   // We can use the skew to transform the div, but the background image will
   // skew too and all the children will skew too.
-  transform: skewY(-7deg);
+  // transform: skewY(-7deg);
 
   // Fix to unskew children, just skew in the oposite direction.
-  & > * {
-    transform: skewY(7deg);
-  }
+  // & > * {
+  //   transform: skewY(7deg);
+  // }
 
   // I will use the clip path, so I don't have to bother with the skewed image
 
   /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
   where we can set the four points where the container should exists, and everything out will be cliped. 
   The four points rotate clockwise, the first being the top left corner.*/
-  // clip-path: polygon(0 18vh, 100% 0, 100% 63vh, 0 100%); // Failed
+  -webkit-clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
 }
 
 .section-tours {
   background-color: $color-gray-light-1;
-  padding: 25rem 0;
-  margin-top: -10rem;
+  padding: 25rem 0 10rem 0;
+  margin-top: -20rem;
 }
