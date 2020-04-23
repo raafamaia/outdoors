@@ -5,7 +5,7 @@
 }
 
 .section-features {
-  margin-top: -20rem;
+  margin-top: -10rem;
   padding: 20rem 0;
   background-image: linear-gradient(
       to right bottom,
@@ -32,4 +32,10 @@
   where we can set the four points where the container should exists, and everything out will be cliped. 
   The four points rotate clockwise, the first being the top left corner.*/
   // clip-path: polygon(0 18vh, 100% 0, 100% 63vh, 0 100%); // Failed
+}
+
+.section-tours {
+  background-color: $color-gray-light-1;
+  padding: 25rem 0;
+  margin-top: -10rem;
 }

@@ -229,6 +229,34 @@ We also want to style the visited state, to be the same */
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
 
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem; }
+  .card__side {
+    color: #fff;
+    font-size: 2rem;
+    height: 50rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 0.3rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+  .card:hover .card__side--front {
+    transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0deg); }
+
 .header {
   height: 95vh;
   /* You can apply a background image with a linear gradient, just put what you want to have on the top first, 
@@ -293,7 +321,7 @@ We also want to style the visited state, to be the same */
   margin-top: -20vh; }
 
 .section-features {
-  margin-top: -20rem;
+  margin-top: -10rem;
   padding: 20rem 0;
   background-image: linear-gradient(to right bottom, rgba(241, 229, 194, 0.8), rgba(237, 98, 59, 0.8)), url(../img/outdoors/ship-yard.png);
   background-size: cover;
@@ -304,3 +332,8 @@ We also want to style the visited state, to be the same */
   The four points rotate clockwise, the first being the top left corner.*/ }
   .section-features > * {
     transform: skewY(7deg); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -10rem; }
