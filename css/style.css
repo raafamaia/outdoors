@@ -241,7 +241,7 @@ We also want to style the visited state, to be the same */
     transform: translate(-50%, -50%);
     text-align: center; }
   .header__logo {
-    height: 3.5rem; }
+    height: 7rem; }
 
 .row {
   max-width: 114rem;
