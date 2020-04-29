@@ -1,6 +1,7 @@
 /* When select a link, use pseudo element :link
 We also want to style the visited state, to be the same */
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -15,6 +16,10 @@ We also want to style the visited state, to be the same */
     transition: all 0.2s;
 
     position: relative;
+
+    // Change for the <button> element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -28,7 +33,9 @@ We also want to style the visited state, to be the same */
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-1rem);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
@@ -43,11 +50,11 @@ We also want to style the visited state, to be the same */
   }
 
   &--orange {
-    background-color: $color-primary-dark;
+    background-color: $color-primary;
     color: $color-white;
 
     &::after {
-      background-color: $color-primary-dark;
+      background-color: $color-primary;
     }
   }
 

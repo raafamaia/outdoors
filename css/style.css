@@ -86,7 +86,7 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, #eecd69, #ed623b);
+  background-image: linear-gradient(to right, #f1e5c2, #ed623b);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -107,26 +107,26 @@ body {
     margin-bottom: 3rem; }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .u-margin-top-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-top-huge {
-  margin-bottom: 10rem; }
+  margin-bottom: 10rem !important; }
 
 /* When select a link, use pseudo element :link
 We also want to style the visited state, to be the same */
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1.6rem;
@@ -135,7 +135,9 @@ We also want to style the visited state, to be the same */
   border-radius: 10rem;
   /* When not sure of the transition state, use all */
   transition: all 0.2s;
-  position: relative; }
+  position: relative;
+  border: none;
+  cursor: pointer; }
 
 .btn:hover {
   /* Y going up is negative value */
@@ -145,7 +147,8 @@ We also want to style the visited state, to be the same */
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
-.btn:active {
+.btn:active, .btn:focus {
+  outline: none;
   transform: translateY(-1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
@@ -156,10 +159,10 @@ We also want to style the visited state, to be the same */
     background-color: #fff; }
 
 .btn--orange {
-  background-color: #ed623b;
+  background-color: #ff8800;
   color: #fff; }
   .btn--orange::after {
-    background-color: #ed623b; }
+    background-color: #ff8800; }
 
 .btn::after {
   content: '';
@@ -178,16 +181,16 @@ We also want to style the visited state, to be the same */
   animation-fill-mode: backwards; }
 
 .btn-text:link, .btn-text:visited {
-  color: #dcaa2d;
+  color: #ff8800;
   display: inline-block;
   text-decoration: none;
-  border-bottom: 1px solid #dcaa2d;
+  border-bottom: 1px solid #ff8800;
   padding: 0.3rem;
   font-size: 1.6rem;
   transition: all 0.2s; }
 
 .btn-text:hover {
-  background-color: #dcaa2d;
+  background-color: #ff8800;
   color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   transform: translateY(-0.2rem); }
@@ -234,7 +237,7 @@ We also want to style the visited state, to be the same */
   .feature-box__icon {
     font-size: 6rem;
     margin-bottom: 0.5rem;
-    background-image: linear-gradient(to right, #dcaa2d, #ed623b);
+    background-image: linear-gradient(to right, #ff8800, #ed623b);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; }
@@ -264,7 +267,7 @@ We also want to style the visited state, to be the same */
       .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
       .card__side--back-2 {
-        background-image: linear-gradient(to right bottom, #eecd69, #ed623b); }
+        background-image: linear-gradient(to right bottom, #f1e5c2, #ed623b); }
       .card__side--back-3 {
         background-image: linear-gradient(to right bottom, #5643fa, #2998ff); }
   .card:hover .card__side--front {
@@ -284,7 +287,7 @@ We also want to style the visited state, to be the same */
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/outdoors/card-cover-1.png); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, #eecd69, #ed623b), url(../img/outdoors/card-cover-2.png); }
+      background-image: linear-gradient(to right bottom, #f1e5c2, #ed623b), url(../img/outdoors/card-cover-2.png); }
     .card__picture--3 {
       background-image: linear-gradient(to right bottom, #5643fa, #2998ff), url(../img/outdoors/card-cover-3.png); }
   .card__heading {
@@ -304,7 +307,7 @@ We also want to style the visited state, to be the same */
     .card__heading-span--1 {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
     .card__heading-span--2 {
-      background-image: linear-gradient(to right bottom, rgba(238, 205, 105, 0.85), rgba(237, 98, 59, 0.85)); }
+      background-image: linear-gradient(to right bottom, rgba(241, 229, 194, 0.85), rgba(237, 98, 59, 0.85)); }
     .card__heading-span--3 {
       background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.85), rgba(41, 152, 255, 0.85)); }
   .card__details {
@@ -451,7 +454,7 @@ We also want to style the visited state, to be the same */
 .form__radio-button {
   height: 3rem;
   width: 3rem;
-  border: 0.5rem solid #dcaa2d;
+  border: 0.5rem solid #ff8800;
   border-radius: 50%;
   display: inline-block;
   position: absolute;
@@ -468,7 +471,7 @@ We also want to style the visited state, to be the same */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #dcaa2d;
+    background-color: #ff8800;
     opacity: 0;
     transition: opacity 0.2s; }
 
@@ -480,7 +483,7 @@ We also want to style the visited state, to be the same */
   /* You can apply a background image with a linear gradient, just put what you want to have on the top first, 
   and then what you want to have in the back. */
   /* background-image: linear-gradient(to right bottom, #7ed56fc7, #28b485c7), */
-  background-image: linear-gradient(to right bottom, rgba(238, 205, 105, 0.8), rgba(237, 98, 59, 0.8)), url(../img/outdoors/bg-1.png);
+  background-image: linear-gradient(to right bottom, rgba(241, 229, 194, 0.8), rgba(237, 98, 59, 0.8)), url(../img/outdoors/bg-1.png);
   /* It says that you want the image to cover all the space */
   background-size: cover;
   /* The top of the image always appears */
@@ -542,7 +545,7 @@ We also want to style the visited state, to be the same */
 .section-features {
   margin-top: -20rem;
   padding: 25rem 0;
-  background-image: linear-gradient(to right bottom, rgba(238, 205, 105, 0.8), rgba(237, 98, 59, 0.8)), url(../img/outdoors/ship-yard.png);
+  background-image: linear-gradient(to right bottom, rgba(241, 229, 194, 0.8), rgba(237, 98, 59, 0.8)), url(../img/outdoors/ship-yard.png);
   background-size: cover;
   background-position: center;
   /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
@@ -562,7 +565,7 @@ We also want to style the visited state, to be the same */
 
 .section-book {
   padding: 15rem 0;
-  background-image: linear-gradient(to right bottom, #eecd69, #ed623b); }
+  background-image: linear-gradient(to right bottom, #f1e5c2, #ed623b); }
 
 .book {
   background-image: linear-gradient(105deg, rgba(238, 238, 238, 0.9) 0%, rgba(238, 238, 238, 0.9) 49.9%, transparent 50%), url(../img/outdoors/art-fair.png);
