@@ -1,0 +1,76 @@
+.section-about {
+  background-color: $color-gray-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
+
+.section-features {
+  margin-top: -20rem;
+  padding: 25rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/outdoors/ship-yard.png);
+
+  background-size: cover;
+  background-position: center;
+
+  // We can use the skew to transform the div, but the background image will
+  // skew too and all the children will skew too.
+  // transform: skewY(-7deg);
+
+  // Fix to unskew children, just skew in the oposite direction.
+  // & > * {
+  //   transform: skewY(7deg);
+  // }
+
+  // I will use the clip path, so I don't have to bother with the skewed image
+
+  /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
+  where we can set the four points where the container should exists, and everything out will be cliped. 
+  The four points rotate clockwise, the first being the top left corner.*/
+  -webkit-clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+}
+
+.section-tours {
+  background-color: $color-gray-light-1;
+  padding: 25rem 0 10rem 0;
+  margin-top: -20rem;
+}
+
+.section-stories {
+  padding: 15rem 0;
+  position: relative;
+}
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+
+.book {
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-gray-light-2, 0.9) 0%,
+      rgba($color-gray-light-2, 0.9) 49.9%,
+      transparent 50%
+    ),
+    url(../img/outdoors/art-fair.png);
+  background-size: cover;
+  border-radius: $border-radius;
+
+  height: 50rem;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
+}

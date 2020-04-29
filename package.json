@@ -1,0 +1,30 @@
+{
+  "name": "outdoors",
+  "version": "1.0.6",
+  "description": "Landing page for outdoors",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run compile:sass & npm run server:live",
+    "server:live": "live-server",
+    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/advanced-styling/outdoors.git"
+  },
+  "author": "Rafael Maia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/advanced-styling/outdoors/issues"
+  },
+  "homepage": "https://gitlab.com/advanced-styling/outdoors#readme",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "standard-version": "^7.1.0"
+  }
+}
