@@ -5,7 +5,7 @@ stages:
   - deploy
 
 build:sass:
-  stage: compile
+  stage: build
   allow_failure: false
   script: npm run compile:sass
   cache:
