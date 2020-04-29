@@ -4,9 +4,9 @@
   "description": "Landing page for outdoors",
   "main": "index.js",
   "scripts": {
-    "start": "npm run compile:sass & npm run server:live",
+    "start": "npm run compile:sass  & npm run server:live",
     "server:live": "live-server",
-    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss css/style.css -w --output-style compressed",
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "standard-version"
   },
