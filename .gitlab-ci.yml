@@ -7,7 +7,8 @@ stages:
 build:sass:
   stage: build
   allow_failure: false
-  before_script: npm i
+  before_script:
+    - npm i
   script: npm run compile:sass
   cache:
     key: dist
