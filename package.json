@@ -7,7 +7,7 @@
     "start": "npm run watch:sass  & npm run server:live",
     "server:live": "live-server",
     "compile:sass": "node-sass sass/main.scss css/style.css --output-style compressed",
-    "watch:sass": "node-sass sass/main.scss css/style.css -w --output-style compressed",
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "standard-version"
   },
