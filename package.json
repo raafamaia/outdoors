@@ -1,6 +1,6 @@
 {
   "name": "outdoors",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Landing page for outdoors",
   "main": "index.js",
   "scripts": {
