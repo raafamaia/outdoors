@@ -29,4 +29,11 @@ html {
 
 body {
   box-sizing: border-box;
+
+  // rem uses the font-size to determine the size, so 3rem is 3 * font-size, which is default to 10px;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

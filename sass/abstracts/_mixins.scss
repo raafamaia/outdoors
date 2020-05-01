@@ -28,6 +28,8 @@ breakpoint argument choices:
 - big-desktop
 
 Obs: rems do not apply for media queries, use ems (which is 1em = 16px)
+
+ORDER TO REFACTOR DESKTOP INTO: base + typography > general layout + grid > components
 */
 
 @mixin respond($breakpoint) {
