@@ -302,6 +302,9 @@ We also want to style the visited state, to be the same */
   border-radius: 0.3rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: transform 0.3s; }
+  @media (max-width: 56.25em) {
+    .feature-box {
+      padding: 2rem; } }
   .feature-box__icon {
     font-size: 6rem;
     margin-bottom: 0.5rem;
@@ -309,6 +312,9 @@ We also want to style the visited state, to be the same */
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; }
+    @media (max-width: 56.25em) {
+      .feature-box__icon {
+        margin-bottom: 0; } }
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
 
@@ -891,7 +897,8 @@ We also want to style the visited state, to be the same */
   @media (max-width: 56.25em) {
     .section-features {
       -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%); } }
+      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+      padding: 15rem 0; } }
   @media (max-width: 37.5em) {
     .section-features {
       -webkit-clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
