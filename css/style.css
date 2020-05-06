@@ -633,10 +633,16 @@ We also want to style the visited state, to be the same */
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.5);
     transition: all 0.5s 0.2s; }
+    @media (max-width: 37.5em) {
+      .popup__content {
+        width: 100%; } }
   .popup__left {
     width: 33.33333%;
     display: table-cell;
     vertical-align: middle; }
+    @media (max-width: 75em) {
+      .popup__left {
+        display: none; } }
   .popup__close:link, .popup__close:visited {
     color: #777;
     position: absolute;
@@ -653,6 +659,11 @@ We also want to style the visited state, to be the same */
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media (max-width: 75em) {
+      .popup__right {
+        width: 100%;
+        display: block;
+        height: 77.77777774%; } }
   .popup__img {
     display: block;
     width: 100%; }
@@ -669,6 +680,12 @@ We also want to style the visited state, to be the same */
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    @media (max-width: 37.5em) {
+      .popup__text {
+        column-count: 1;
+        column-gap: 0;
+        column-rule: none;
+        overflow-y: auto; } }
 
 .navigation__checkbox {
   display: none; }
