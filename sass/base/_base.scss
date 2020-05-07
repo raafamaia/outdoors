@@ -11,8 +11,34 @@ html {
   // Default font-size of browsers is 16px;
   // Here we are  setting the font-size to 10px (62.5% of 16px), which will help us using 'rem'.
   font-size: 62.5%;
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+
+  @include respond(tab-land) {
+    //1rem = 9px;
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    //1rem = 8px;
+    font-size: 50%;
+  }
 }
 
 body {
   box-sizing: border-box;
+
+  // rem uses the font-size to determine the size, so 3rem is 3 * font-size, which is default to 10px;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
 }
