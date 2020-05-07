@@ -30,9 +30,9 @@
   device, so we also say to use the big image only when the width is greater then 600px 
   Safari do not support min-resolution, then use -webkit-min-device-pixel-ratio*/
 
-  @media (min-resolution: 192dpi) and (min-width: 37.5em),
-    (-webkit-min-device-pixel-ratio: 2dpi) and (min-width: 37.5em),
-    (min-width: 100em) {
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio: 2dpi) and (min-width: 37.5em),
+    only screen and (min-width: 100em) {
     background-image: linear-gradient(
         to right bottom,
         rgba($color-primary-light, 0.8),
