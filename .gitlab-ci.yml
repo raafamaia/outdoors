@@ -9,7 +9,7 @@ build:sass:
   allow_failure: false
   before_script:
     - npm i
-  script: npm run compile:sass
+  script: npm run build:css
   cache:
     key: dist
     policy: push

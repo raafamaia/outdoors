@@ -1,5 +1,5 @@
 .header {
-  height: 95vh;
+  height: 85vh;
   /* You can apply a background image with a linear gradient, just put what you want to have on the top first, 
   and then what you want to have in the back. */
   /* background-image: linear-gradient(to right bottom, #7ed56fc7, #28b485c7), */
@@ -17,16 +17,22 @@
   background-position: center;
   position: relative;
 
-  /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    /* This is how clip-path work, you can pass a geometric box to it, in this case a polygon, 
   where we can set the four points where the container should exists, and everything out will be cliped. 
   The four points rotate clockwise, the first being the top left corner.*/
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  }
 
   /* When the resolution screen are bigger then 192dpi (2x screen), use the bigger version of the image.
    All the modern phones have a density x2, but we don't need to use a huge image on a small 
-  device, so we also say to use the big image only when the width is greater then 600px */
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 100em) {
+  device, so we also say to use the big image only when the width is greater then 600px 
+  Safari do not support min-resolution, then use -webkit-min-device-pixel-ratio*/
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2dpi) and (min-width: 37.5em),
+    (min-width: 100em) {
     background-image: linear-gradient(
         to right bottom,
         rgba($color-primary-light, 0.8),
